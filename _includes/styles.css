@@ -1,0 +1,74 @@
+:root {
+  /* setting color scheme for light/dark text */
+  color-scheme: light dark;
+  --light-color: #ffcfb8;
+  --dark-color: #113134;
+}
+
+html {
+  --primary-color: var(--dark-color);
+  --secondary-color: var(--light-color);
+
+  background-color: var(--primary-color);
+  text-align: center;
+  position: fixed;
+  width: 100%; 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* system specific font */
+  font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Arial",
+  sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --primary-color: var(--light-color);
+    --secondary-color: var(--dark-color);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+main {
+  margin: 0;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10vw 0 10vw;
+}
+
+h1 {
+  font-size: 5vmax;
+  margin: 0;
+  padding: 0 0 1rem 0;
+}
+
+h2 {
+  font-size: 3vmax;
+  margin: 0;
+  padding: 0 0 1rem 0;
+}
+
+a {
+  padding: 1rem;
+  font-size: 3vmax;
+
+  /* setting text color of links to match other canvastext */
+  color: var(--canvastext);
+  text-align: center;
+  margin: 1rem 0;
+  /* seems to cause the border I want via apple */
+  border-radius: 980px;
+  border: 5px solid var(--secondary-color);
+}
+
+a:hover, a:focus {
+  font-weight: bold;
+  border-style: dashed;
+}
